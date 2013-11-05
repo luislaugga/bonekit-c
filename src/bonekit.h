@@ -1,6 +1,6 @@
 /*
  
- test_helper.h
+ bonekit.h
  BoneKit
  
  Copyright (cc) 2012 Luis Laugga.
@@ -25,21 +25,24 @@
  
 */
 
-#ifndef __BONEKIT_TEST_HELPER_H__
-#define __BONEKIT_TEST_HELPER_H__
+#ifndef __BONEKIT_BONEKIT_H__
+#define __BONEKIT_BONEKIT_H__
+
+#include <signal.h>
+#include <unistd.h>
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
 #include <stdbool.h>
 #include <string.h>
-#include <assert.h>
 
-#define LOG_SUITE_START(suitename) printf("Testing %s\n", suitename)
-#define LOG_TEST_START //printf("Starting: %s\n", __PRETTY_FUNCTION__)
-#define LOG_TEST_END printf("[OK] %s\n", __PRETTY_FUNCTION__)
+#include "beaglebone.h"
+#include "gpio.h"
+#include "adc.h"
+#include "pwm.h"
+#include "pin.h"
 
-#include "bonekit.h"
+#include "i2c.h"
+#include "hmc5883l.h"
 
 #endif

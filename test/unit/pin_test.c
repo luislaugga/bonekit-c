@@ -1,5 +1,4 @@
 #include "test_helper.h"
-#include "pin.h"
 
 static void test_pin()
 {

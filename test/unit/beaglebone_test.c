@@ -1,5 +1,4 @@
 #include "test_helper.h"
-#include "beaglebone.h"
 
 static void test_beaglebone()
 {
