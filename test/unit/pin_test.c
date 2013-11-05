@@ -1,0 +1,62 @@
+#include "test_helper.h"
+#include "pin.h"
+
+static void test_pin()
+{
+  beaglebone_t p = P9_42;
+  
+  pin_t * pin = pin_alloc();
+  pin_init(pin, P9_42);
+  
+  pin_set_analog_value(pin, 1.0);
+  
+  sleep(1);
+  
+  pin_set_analog_value(pin, 0.5);
+  
+  sleep(1);
+  
+  pin_set_analog_value(pin, 0.0);
+  
+  pin_destroy(pin);
+  
+  pin = pin_alloc();
+  pin_init(pin, P9_13);
+  
+  pin_set_mode(pin, OUTPUT);
+  pin_set_value(pin, HIGH);
+  
+  sleep(1);
+  
+  pin_set_value(pin, LOW);
+  
+  sleep(1);
+  
+  pin_set_value(pin, HIGH);
+  
+  sleep(1);
+  
+  pin_destroy(pin);
+  
+  pin = pin_alloc();
+  pin_init(pin, P9_39);
+  
+  printf("analog value %f\n", pin_analog_value(pin));
+  
+  sleep(1);
+  
+  printf("analog value %f\n", pin_analog_value(pin));
+  
+  sleep(1);
+  
+  pin_destroy(pin);
+}
+
+int main(void)
+{
+  LOG_SUITE_START("pin");
+
+  test_pin();
+
+  return 0;
+}

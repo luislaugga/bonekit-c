@@ -1,18 +1,20 @@
-# Object files
+.DS_Store
+build
+configure
+Makefilei
+*.deps*
+*.cache
+*.m4
+*.in
+*.*~
+._*
 *.o
-*.ko
-
-# Libraries
 *.lib
 *.a
-
-# Shared objects (inc. Windows DLLs)
 *.dll
 *.so
 *.so.*
 *.dylib
-
-# Executables
 *.exe
 *.out
 *.app
