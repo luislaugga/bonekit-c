@@ -1,6 +1,6 @@
 /*
  
- bonekit.h
+ adxl345.h
  BoneKit
  
  Copyright (cc) 2012 Luis Laugga.
@@ -25,25 +25,43 @@
  
 */
 
-#ifndef __BONEKIT_BONEKIT_H__
-#define __BONEKIT_BONEKIT_H__
+#ifndef __BONEKIT_ADXL345_H__
+#define __BONEKIT_ADXL345_H__
 
-#include <signal.h>
-#include <unistd.h>
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdbool.h>
-#include <string.h>
-
-#include "beaglebone.h"
-#include "gpio.h"
-#include "adc.h"
-#include "pwm.h"
-#include "pin.h"
-
+#ifdef __cplusplus
+extern "C" {
+#endif
+  
 #include "i2c.h"
-#include "hmc5883l.h"
-#include "adxl345.h"
+
+typedef struct
+{
+	float x;
+	float y;
+	float z;
+} adxl345_vec3_scaled_t;
+
+typedef struct
+{
+	int x;
+	int y;
+	int z;
+} adxl345_vec3_raw_t;
+
+struct adxl345_s
+{
+  adxl345_vec3_raw_t _raw_acceleration;
+  i2c_t * _i2c;
+};
+
+typedef struct adxl345_s adxl345_t;
+
+adxl345_t * adxl345_create();
+void adxl345_destroy(adxl345_t *);
+adxl345_vec3_raw_t * adxl345_raw_acceleration(adxl345_t * obj);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
