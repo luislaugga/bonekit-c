@@ -4,7 +4,7 @@ _BoneKit is a physical interface toolkit for the BeagleBone._
 
 ## Getting Started
 
-Build and test:
+Build and run unit tests:
 
 ```
 ./scripts/autogen.sh

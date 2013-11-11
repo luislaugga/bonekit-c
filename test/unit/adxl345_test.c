@@ -9,10 +9,14 @@ static void test_adxl345()
   adxl345_vec3_raw_t * raw_acceleration = adxl345_raw_acceleration(accelerometer);
   printf("adxl345_vec3_raw_t %d %d %d\n", raw_acceleration->x, raw_acceleration->y, raw_acceleration->z);
   
+  assert(raw_acceleration->x != 0 || raw_acceleration->y !=0 || raw_acceleration->z != 0);
+  
   sleep(1);
   
-  adxl345_vec3_raw_t * raw_acceleration = adxl345_raw_acceleration(accelerometer);
+  raw_acceleration = adxl345_raw_acceleration(accelerometer);
   printf("adxl345_vec3_raw_t %d %d %d\n", raw_acceleration->x, raw_acceleration->y, raw_acceleration->z);
+  
+  assert(raw_acceleration->x != 0 || raw_acceleration->y !=0 || raw_acceleration->z != 0);
   
   sleep(1);
   
