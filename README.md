@@ -1,6 +1,6 @@
 # BoneKit for C
 
-_BoneKit is a physical interface toolkit for the BeagleBone._
+_BoneKit is a physical computing toolkit for the BeagleBone._
 
 ## Getting Started
 
